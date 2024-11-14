@@ -32,13 +32,15 @@ class FFNN(nn.Module):
 
     def forward(self, input_vector):
         # [to fill] obtain first hidden layer representation
+        hidden_representation = self.activation(self.W1(input_vector))
 
-        # [to fill] obtain output layer representation
+        # [to fill] obtain output layer representation 
+        output_representation = self.W2(hidden_representation)
 
         # [to fill] obtain probability dist.
+        predicted_vector = self.softmax(output_representation)
 
         return predicted_vector
-
 
 # Returns: 
 # vocab = A set of strings corresponding to the vocabulary
